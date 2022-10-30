@@ -1,0 +1,73 @@
+.owl-carousel.off {
+    display: block;
+    text-align: center;
+}
+.owl-carousel.off > button {
+    margin: 0.35em;
+}
+
+.link-mimic {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #38424d;
+}
+
+.link-mimic:hover {
+    color: #0898e7;
+}
+
+.dropdown-menu a:hover {
+    color: #0898e7;
+}
+@media (max-width: 991px) {
+    .link-mimic {
+        padding: 4px 0;
+    }
+    .dropdown-menu {
+        border: none;
+        padding: 0 1em;
+    }
+}
+
+.single-pricing .img-container {
+    height: 15em;
+    margin-bottom: 3em;
+    border-radius: 8px 8px 0 0;
+    margin: -30px;
+    margin-bottom: 2em !important;
+}
+
+.single-pricing .img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    /* border-radius: 8px; */
+}
+
+.single-pricing .description {
+    /* margin-top: 34px; */
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.description p {
+    font-size: 80%;
+}
+
+.single-pricing.with-img .pricing-shape {
+    top: 14em;
+    height: 55%;
+}
+.single-pricing.with-img .pricing-shape img {
+    /* top: 14em; */
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+}
+.navbar-brand img {
+	max-height: 2.25em;
+	min-height: 1.75em;
+}

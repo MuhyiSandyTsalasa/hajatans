@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Hajatans - Dashboard</title>
+
+    <link rel="shortcut icon" href="/photo/mitra/logo/165258084458465.png" type="image/png">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://hajatans.com/cloudme.fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/admin-theme/plugins/fontawesome-free/css/all.min.css">
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/admin-theme/dist/css/adminlte.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/admin-theme/dist/css/style-edit-data.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="/admin-theme/plugins/toastr/toastr.min.css">
+    <!-- Loader -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/slick-loader@1.1.20/slick-loader.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .alert-warning {
+            font-size: small !important
+        }
+    </style>
+    <style media="screen">
+        .info-box {
+            box-shadow: 0 8px 8px 0 rgb(0 0 0 / 20%)
+        }
+
+        .bg-default-recolor {
+            background: #ebece2;
+            background: linear-gradient(45deg, rgba(235, 236, 226, 1) 4%, rgba(239, 247, 240, 1) 18%, rgba(255, 254, 255, 1) 37%, rgba(250, 250, 248, 1) 71%, rgba(235, 237, 227, 1) 83%, rgba(222, 235, 233, 1) 94%)
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <!-- Preloader -->
+        <div class="preloader flex-column justify-content-center align-items-center">
+            <img class="animation__wobble" src="/photo/mitra/logo/165258084458465.png" alt="Logo" height="60"
+                width="60">
+        </div>
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light main-header-custom">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-align-left"></i></a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="modal" data-target="#profile">
+                        <button class="btn btn-sm btn-primary"><i class="fas fa-user"></i></button>
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link" onclick="showBonusEarned('6111')">
+                        <button class="btn btn-sm btn-primary"><i class="fas fa-wallet"></i></button>
+                    </a>
+                </li>
+
+                <li class="nav-item" data-toggle="modal" data-target="#logout">
+                    <div class="nav-link">
+                        <button class="btn btn-sm btn-danger"><i class="fas fa-sign-out-alt"></i></button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+
+            <!-- Brand Logo -->
+            <a href="/" class="brand-link">
+                <img src="/photo/mitra/logo/165258084458465.png" alt="Logo" class="brand-image img-circle elevation-3"
+                    style="background-color:white">
+                <span class="brand-text font-weight-light"> <b>Hajatans</b> </span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="/admin-theme/dist/img/user.jpg" class="img-circle elevation-2" alt="User Image"
+                            data-toggle="modal" data-target="#profile">
+                    </div>
+                    <div class="info">
+                        <a href="#" data-toggle="modal" data-target="#profile" class="d-block"
+                            onclick="closeMenu()">Nayla Alvinaya</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+                        <li class="nav-item">
+                            <a href="/customer/home" class="nav-link ">
+                                <i class="nav-icon fas fa-home"></i>
+                                <p>
+                                    Home
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/customer/buypackage" class="nav-link ">
+                                <i class="nav-icon fas fa-store"></i>
+                                <p>
+                                    Buy Package
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/customer/myorder" class="nav-link  active ">
+                                <i class="nav-icon fas fa-shopping-bag"></i>
+                                <p>
+                                    My Order
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://wa.me/6281222881121" class="nav-link" target="_blank">
+                                <i class="nav-icon fas fa-headset"></i>
+                                <p>
+                                    Chat with Us
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#feedback"
+                                onclick="closeMenu()">
+                                <i class="nav-icon fas fa-comment"></i>
+                                <p>
+                                    Feedback
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-md-6">
+                            <h4> My Order</h4>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-12">
+                            No orders yet. Choose your package <a href="/customer/dashboard">here.</a>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <div class="modal fade" id="profil">
+            <div class="modal-dialog">
+                <form action="/customer/profile/update/6111" method="post" class="modal-content">
+                    <input type="hidden" name="_token" value="UqENTsRm6MwL2iTgIqCIaclWTjmjUFrCURLYpvOD">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-weight: bold;">Update Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button class="btn btn-sm btn-primary" style="border-radius: 0 !important;"
+                            onclick="updateProfil1('6111')"> Update Profiles </button>
+                        <button class="btn btn-sm btn-default" style="border-radius: 0 !important;"
+                            onclick="updatePassword('6111')"> Update Password </button>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleInputName">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
+                                placeholder="Nama Lengkap" name="fullname" required value="Nayla Alvinaya">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email" name="email" required
+                                value="12mipa4naylaalvinaya@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Phone</label>
+                            <input type="number" class="form-control form-control-sm" placeholder="Phone" name="phone"
+                                required value="6287824392305">
+                        </div>
+                        <div class="form-group">
+                            <label>Password Lama</label>
+                            <input type="password" class="form-control" placeholder="Password Lama"
+                                name="currentpassword" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
+                            <li class="fas fa-window-close"></li>&nbsp;&nbsp; Close &nbsp;&nbsp;
+                        </button>
+                        <button class="btn btn-sm btn-success" type="submit">
+                            <li class="fas fa-paper-plane"></li>&nbsp;&nbsp; Update &nbsp;&nbsp;
+                        </button>
+                    </div>
+                </form>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="password">
+            <div class="modal-dialog">
+                <form action="/customer/password/update/6111" method="post" class="modal-content">
+                    <input type="hidden" name="_token" value="UqENTsRm6MwL2iTgIqCIaclWTjmjUFrCURLYpvOD">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-weight: bold;">Update Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button class="btn btn-sm btn-default" style="border-radius: 0 !important;"
+                            onclick="updateProfil1('6111')"> Update Profiles </button>
+                        <button class="btn btn-sm btn-primary" style="border-radius: 0 !important;"
+                            onclick="updatePassword('6111')"> Update Password </button>
+                    </div>
+                    <div>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Password Lama</label>
+                            <input type="password" class="form-control" placeholder="Password Lama"
+                                name="currentpassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password Baru</label>
+                            <input type="password" class="form-control" placeholder="Password Baru" name="newpassword"
+                                required>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
+                            <li class="fas fa-window-close"></li>&nbsp;&nbsp; Close &nbsp;&nbsp;
+                        </button>
+                        <button class="btn btn-sm btn-success" type="submit">
+                            <li class="fas fa-paper-plane"></li>&nbsp;&nbsp; Update &nbsp;&nbsp;
+                        </button>
+                    </div>
+                </form>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="profile">
+            <div class="modal-dialog">
+                <div action="#" method="post" class="modal-content">
+                    <input type="hidden" name="_token" value="UqENTsRm6MwL2iTgIqCIaclWTjmjUFrCURLYpvOD">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-weight: bold;">Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <div class="image">
+                                <img src="/admin-theme/dist/img/user.jpg" class="img-circle elevation-2"
+                                    alt="User Image">
+                            </div>
+                            <h4 class="mt-2">Nayla Alvinaya </h4>
+                            <p>+6287824392305 <br> 12mipa4naylaalvinaya@gmail.com </p>
+                            <small>Kode Referral Kamu:</small><br>
+                            <button class="btn btn-sm btn-primary" onclick="copy('KZTN56111')">
+                                <li class="fas fa-copy">
+                                </li> &nbsp; KZTN56111 &nbsp;
+                            </button><br>
+                            <p class="mt-5">
+                                <small>Kamu akan mendapatkan bonus 5% <br> setiap kali kode referral kamu digunakan
+                                    <br>orang lain untuk melakukan transaksi.</small>
+                            </p>
+                            <button class="btn btn-sm btn-danger" onclick="updateProfil('6111')">&nbsp; Update Profile
+                                &nbsp;&nbsp;<li class="fas fa-edit"></li></button>
+                            <button class="btn btn-sm btn-success" onclick="showBonusEarned('6111')">&nbsp; Lihat Bonus
+                                &nbsp;&nbsp;<li class="fas fa-arrow-right"></li></button>
+                        </center>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="bonus">
+            <div class="modal-dialog">
+                <div action="#" method="post" class="modal-content">
+                    <input type="hidden" name="_token" value="UqENTsRm6MwL2iTgIqCIaclWTjmjUFrCURLYpvOD">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-weight: bold;">Riwayat Referral</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body justify-content-between"
+                        style="overflow-y: scroll;max-height: 350px;font-size:90% !important">
+                        <center v-if="bonuses.length <= 0"> <small>Belum ada bonus!</small> </center>
+                        <div v-for="(item, index) in bonuses">
+                            <hr v-if="index>0">
+                            <table>
+                                <tr>
+                                    <td>Nominal</td>
+                                    <td>&nbsp;:&nbsp;</td>
+                                    <td v-if="item.total > 0" style="color:green">{{ item.total_reformat }}</td>
+                                    <td v-else style="color:red">{{ item.total_reformat }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal</td>
+                                    <td>&nbsp;:&nbsp;</td>
+                                    <td>{{ item.created_at }}</td>
+                                </tr>
+                                <tr>
+                                    <td style="vertical-align: top;">Keterangan</td>
+                                    <td style="vertical-align: top;">&nbsp;:&nbsp;</td>
+                                    <td>{{ item.description }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <h5>
+                            <div style="text-align: right;">
+                                <small>Subtotal</small>
+                            </div>
+                            <div style="text-align: right;color:green">
+                                <small>{{ subtotal }}</small>
+                            </div>
+                        </h5>
+                        <h5 v-if="isRequest">
+                            <br>
+                            <div style="text-align: right;">
+                                <small>Penarikan Dana</small>
+                            </div>
+                            <div style="text-align: right;color:red">
+                                <small>{{ totalRequest }}</small>
+                            </div>
+                        </h5>
+                        <hr>
+                        <small v-if="isRequest">Saat ini permintaan kamu untuk melakukan penarikan dana masih diproses,
+                            paling lama dalam 2 hari kerja.</small>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-sm btn-success" onclick="showWithdrawn()"
+                            v-if="bonuses.length > 0 && isRequest == false">&nbsp;<i
+                                class="fas fa-download"></i>&nbsp;Tarik Dana</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="withdrawn">
+            <div class="modal-dialog">
+                <div action="#" method="post" class="modal-content">
+                    <input type="hidden" name="_token" value="UqENTsRm6MwL2iTgIqCIaclWTjmjUFrCURLYpvOD">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-weight: bold;">Tarik Dana</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body justify-content-between">
+                        <label>Nominal</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light nominal" style="text-align-last: center;"
+                                    id="25" @click="selectNominal(25)">
+                                    IDR 25.000
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light nominal" style="text-align-last: center;"
+                                    id="50" @click="selectNominal(50)">
+                                    IDR 50.000
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light nominal" style="text-align-last: center;"
+                                    id="100" @click="selectNominal(100)">
+                                    IDR 100.000
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light nominal" style="text-align-last: center;"
+                                    id="200" @click="selectNominal(200)">
+                                    IDR 200.000
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+                        <label>Metode Pembayaran</label>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light payment" style="text-align-last: center;"
+                                    id="linkaja" @click="selectPayment('linkaja')">
+                                    Link Aja
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light payment" style="text-align-last: center;"
+                                    id="bca" @click="selectPayment('bca')">
+                                    Bank BCA
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light payment" style="text-align-last: center;"
+                                    id="bni" @click="selectPayment('bni')">
+                                    Bank BNI
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="form-control bg-light payment" style="text-align-last: center;"
+                                    id="bri" @click="selectPayment('bri')">
+                                    Bank BRI
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <label>No Rekening / No Handphone</label>
+                            <input type="text" v-model="no_rek" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Pemilik Rekning</label>
+                            <input type="text" v-model="owner" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-sm btn-success" @click="processPayment()">&nbsp;Proses
+                            Penarikan&nbsp;&nbsp;
+                            <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="logout">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center>Are you sure?</center>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">&nbsp;<i
+                                class="fas fa-times"></i>&nbsp;&nbsp;No, Comeback</button>
+                        <a href="/customer/logout" type="button" class="btn btn-sm btn-danger">&nbsp;<i
+                                class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Yes, Logout</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="feedback">
+            <div class="modal-dialog">
+                <form action="/customer/feedback" method="post" class="modal-content">
+                    <input type="hidden" name="_token" value="UqENTsRm6MwL2iTgIqCIaclWTjmjUFrCURLYpvOD">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="font-weight: bold;">Your Feedback</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <textarea name="feedback" class="form-control" rows="8"
+                                placeholder="Write your feedback here.." cols="80"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">
+                            <li class="fas fa-window-close"></li>&nbsp;&nbsp; Close &nbsp;&nbsp;
+                        </button>
+                        <button class="btn btn-sm btn-success" type="submit">
+                            <li class="fas fa-paper-plane"></li>&nbsp;&nbsp; Send to Us &nbsp;&nbsp;
+                        </button>
+                    </div>
+                </form>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <div class="modal fade" id="marketingkit">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center>Marketing Kit adalah bahan promosi berupa poster dan video yang bisa kamu gunakan untuk
+                            mempromosikan produk ke customer. Marketing Kit akan kami update setiap bulan.</center>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                        <a href="/marketing-kit" target="_blank" type="button" class="btn btn-success btn-sm">Buka
+                            Marketing Kit</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+        <div id="waButton"></div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <strong>Powered by <a href="https://hajatans.com">Hajatans</a>.</strong>
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="/admin-theme/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/admin-theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Ajakan Me -->
+    <script src="/admin-theme/dist/js/adminlte.js"></script>
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="/admin-theme/plugins/chart.js/Chart.min.js"></script>
+    <!-- Toastr -->
+    <script src="/admin-theme/plugins/toastr/toastr.min.js"></script>
+    <!-- Axios -->
+    <script src="/admin-theme/dist/js/axios.min.js"></script>
+    <!-- Vue JS -->
+    <script src="/admin-theme/dist/js/vue.min.js"></script>
+    <!-- lodash.min.js -->
+    <script src="/admin-theme/dist/js/lodash.min.js"></script>
+    <!-- Loader -->
+    <script src="https://unpkg.com/slick-loader@1.1.20/slick-loader.min.js"></script>
+
+    <script type="text/javascript" src="https://app.midtrans.com/snap/snap.js"
+        data-client-key="Mid-client-8kW-i1ctfjCH7da6"></script>
+    <script type="text/javascript">
+        function createPayment(token) {
+            try {
+                window.snap.pay(token, {
+                    onSuccess: function (result) {
+                        console.log(result);
+                        toastr.success("Payment Success!");
+                        window.location.href = '/customer/myorder';
+                    },
+                    onPending: function (result) {
+                        toastr.warning("Wating Your Payment!");
+                    },
+                    onError: function (result) {
+                        console.log(result);
+                        for (var i = 0; i < result.status_message.length; i++) {
+                            if (result.status_code == "409") {
+                                toastr.success(result.status_message[i]);
+                                setTimeout(function () {
+                                    window.location.href = '/customer/myorder';
+                                }, 2000);
+                            } else {
+                                toastr.error(result.status_message[i]);
+                            }
+                        }
+                    },
+                    onClose: function () {
+                        toastr.warning('You closed the popup without finishing the payment');
+                    }
+                });
+            } catch (e) {
+                console.log(e);
+                toastr.error("Transaction cannot be processed!");
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        function closeMenu() {
+            $(".sidebar-mini").attr('class', 'sidebar-mini sidebar-closed sidebar-collapse');
+        }
+
+
+        function copy(that) {
+            console.log(that);
+            navigator.clipboard.writeText(that)
+            toastr.success('Successfully copied referral code!');
+        }
+
+        function showBonusEarned(id) {
+            $('#profile').modal('hide');
+            $('#bonus').modal('show');
+            this.vueBonus.fetchData(id);
+        }
+
+        function updateProfil(id) {
+            $('#profile').modal('hide');
+            $('#profil').modal('show');
+        }
+
+        function updateProfil1(id) {
+            $('#password').modal('hide');
+            $('#profil').modal('show');
+        }
+
+        function updatePassword(id) {
+            $('#profil').modal('hide');
+            $('#password').modal('show');
+        }
+
+        function showWithdrawn() {
+            $('#bonus').modal('hide');
+            $('#withdrawn').modal('show');
+        }
+
+        var vueBonus = new Vue({
+            el: '#bonus',
+            data: {
+                bonuses: '',
+                subtotal: '',
+                isRequest: '',
+                totalRequest: ''
+            },
+            methods: {
+                fetchData(id) {
+                    SlickLoader.enable();
+                    axios.get('/customer/bonuses/' + id)
+                        .then(response => {
+                            this.bonuses = response.data.data;
+                            this.subtotal = response.data.subtotal;
+                            this.isRequest = response.data.isRequest;
+                            this.totalRequest = response.data.totalRequest;
+                            SlickLoader.disable();
+                        });
+                }
+            }
+        });
+
+        var vueWithdrawn = new Vue({
+            el: '#withdrawn',
+            data: {
+                owner: '',
+                no_rek: '',
+                nominal: '',
+                payment: ''
+            },
+            methods: {
+                selectNominal(nominal) {
+                    $('.nominal').attr('class', 'form-control bg-light nominal')
+                    $('#' + nominal).attr('class', 'form-control bg-primary nominal')
+                    this.nominal = nominal
+                },
+                selectPayment(payment) {
+                    $('.payment').attr('class', 'form-control bg-light payment')
+                    $('#' + payment).attr('class', 'form-control bg-primary payment')
+                    this.payment = payment
+                },
+                processPayment() {
+                    let formData = new FormData();
+                    formData.append('owner', this.owner);
+                    formData.append('no_rek', this.no_rek);
+                    formData.append('nominal', this.nominal);
+                    formData.append('payment', this.payment);
+
+                    SlickLoader.enable();
+                    axios.post('/customer/withdrawn/', formData)
+                        .then(response => {
+                            if (response.data.success) {
+                                $('#withdrawn').modal('hide');
+                                toastr.success(response.data.message);
+                            } else {
+                                toastr.error(response.data.message);
+                            }
+
+                            SlickLoader.disable();
+                        });
+                }
+            }
+        });
+    </script>
+
+    <script data-pagespeed-no-defer>
+        (function () {
+            function f(b) {
+                var a = window;
+                if (a.addEventListener) a.addEventListener("load", b, !1);
+                else if (a.attachEvent) a.attachEvent("onload", b);
+                else {
+                    var c = a.onload;
+                    a.onload = function () {
+                        b.call(this);
+                        c && c.call(this)
+                    }
+                }
+            };
+            window.pagespeed = window.pagespeed || {};
+            var k = window.pagespeed;
+
+            function l(b, a, c, g, h) {
+                this.h = b;
+                this.i = a;
+                this.l = c;
+                this.j = g;
+                this.b = h;
+                this.c = [];
+                this.a = 0
+            }
+            l.prototype.f = function (b) {
+                for (var a = 0; 250 > a && this.a < this.b.length; ++a, ++this.a) try {
+                    document.querySelector(this.b[this.a]) && this.c.push(this.b[this.a])
+                } catch (c) {}
+                this.a < this.b.length ? window.setTimeout(this.f.bind(this), 0, b) : b()
+            };
+            k.g = function (b, a, c, g, h) {
+                if (document.querySelector && Function.prototype.bind) {
+                    var d = new l(b, a, c, g, h);
+                    f(function () {
+                        window.setTimeout(function () {
+                            d.f(function () {
+                                for (var a = "oh=" + d.l + "&n=" + d.j, a = a + "&cs=",
+                                        b = 0; b < d.c.length; ++b) {
+                                    var c = 0 < b ? "," : "",
+                                        c = c + encodeURIComponent(d.c[b]);
+                                    if (131072 < a.length + c.length) break;
+                                    a += c
+                                }
+                                k.criticalCssBeaconData = a;
+                                var b = d.h,
+                                    c = d.i,
+                                    e;
+                                if (window.XMLHttpRequest) e = new XMLHttpRequest;
+                                else if (window.ActiveXObject) try {
+                                    e = new ActiveXObject("Msxml2.XMLHTTP")
+                                } catch (m) {
+                                    try {
+                                        e = new ActiveXObject("Microsoft.XMLHTTP")
+                                    } catch (n) {}
+                                }
+                                e &&
+                                    (e.open("POST", b + (-1 == b.indexOf("?") ? "?" :
+                                            "&") + "url=" + encodeURIComponent(c)), e
+                                        .setRequestHeader("Content-Type",
+                                            "application/x-www-form-urlencoded"), e
+                                        .send(a))
+                            })
+                        }, 0)
+                    })
+                }
+            };
+            k.criticalCssBeaconInit = k.g;
+        })();
+        pagespeed.selectors = [".alert-warning", ".bg-default-recolor", ".info-box"];
+        pagespeed.criticalCssBeaconInit('/ngx_pagespeed_beacon', 'https://hajatans.com/customer/myorder', 'UDcGd8xld-',
+            '0FEKaSFrIzk', pagespeed.selectors);
+    </script>
+</body>
+
+</html>
