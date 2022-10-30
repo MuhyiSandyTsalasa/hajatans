@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="id-ID">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Hajatans - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="description" content="Platform pembuatan undangan digital untuk pernikahan. Tersedia paket pembuatan undangan gratis hingga premium" itemprop="description">
+<meta name="keywords" content="undangan, undangan digital, undangan website, undangan video, undangan pernikahan, undangan online, undangan web, website pernikahan, video pernikahan, undangan pernikahan online, online invitation, e invitation, invitation, wedding invitation digital, undangan pernikahan digital, undangan nikah, undangan nikah digital, undangan digital pernikahan, undangan perkawinan, undangan pernikahan, undangan web, undangan website, undangan online, undangan onlineku, template undangan, desain undangan, desain undangan pernikahan, cara membuat undangan digital, cara membuat undangan pernikahan, gambar undangan perkawinan, gambar undangan pernikahan, website pernikahan, template video undangan pernikahan, undangan pernikahan online, undangan digital kosong, template undangan digital kosong, template undangan digital, background undangan digital, membuat undangan digital, contoh undangan pernikahan" itemprop="keywords" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="googlebot-news" content="index, follow" />
+
+<meta property="og:title" content="Hajatans">
+<meta property="og:url" content="https://hajatans.com">
+<meta property="og:description" content="Platform pembuatan undangan digital untuk pernikahan. Tersedia paket pembuatan undangan gratis hingga premium">
+<meta property="og:image" content="https://ajakan.me/photo/mitra/logo/165258084458465.png">
+<meta property="og:site_name" content="hajatans.com">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:description" content="Platform pembuatan undangan digital untuk pernikahan. Tersedia paket pembuatan undangan gratis hingga premium" />
+<meta name="twitter:image:src" content="https://ajakan.me/photo/mitra/logo/165258084458465.png" />
+
+<link rel="shortcut icon" href="https://hajatans.com/photo/mitra/logo/165258084458465.png">
+<link href="https://hajatans.com" rel="dns-prefetch">
+<link href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link href="https://code.jquery.com" rel="dns-prefetch">
+<link href="https://cdn.jsdelivr.net" rel="dns-prefetch">
+
+<meta name="google-site-verification" content="AgoJUAdmN_x49LaE9JMaz4MbSnhzlzbLV9qfnzz2wyY" />
+<meta name="google-site-verification" content="NYsibG19vgF6l6mFwFfKVO6SSwaMDUUXEhCw5asH78c" />
+    
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://hajatans.com/cloudme.fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://hajatans.com/admin-theme/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="https://hajatans.com/admin-theme/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="https://hajatans.com/admin-theme/plugins/toastr/toastr.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://hajatans.com/admin-theme/dist/css/adminlte.min.css">
+    <!-- Custom CSS -->
+    <style media="screen">
+        .btn {
+            border-radius: 15px !important;
+        }
+
+        .card {
+            border-radius: 15px !important;
+        }
+
+        .login-page {
+            background-color: #ffffff !important;
+        }
+
+        .form-control {
+            border-top-left-radius: 10px !important;
+            border-bottom-left-radius: 10px !important;
+        }
+
+        @import  url("https://hajatans.com/cloudme.fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,500,600,700&display=swap");
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            color: #747E88;
+            overflow-x: hidden;
+        }
+        input[type="password"]::-ms-reveal {
+            display: none;
+        }
+        .input-group {
+            position: relative;
+            width: 100%;
+        }
+        .toggle {
+            background: none;
+            border: none;
+            color: #337ab7;
+            /*display: none;*/
+            /*font-size: .9em;*/
+            font-weight: 600;
+            /*padding: .5em;*/
+            position: absolute;
+            right: 45px;
+            top: 4px;
+            z-index: 9;
+        }
+    </style>
+</head>
+
+<body class="hold-transition login-page">
+    <div class="login-box" id="app">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary" style="box-shadow: 0 4px 8px 0 rgb(0 0 0 / 54%);">
+            <div class="card-header text-center">
+                <a href="/" class="h1"> <img
+                        src="https://hajatans.com/photo/mitra/logo/165258083616002.png"
+                        alt="Logo Ajakan" width="200px"> </a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+
+                <form action="http://127.0.0.1:3000/Project Web Hajatans/html/lobby.html" method="post">
+                    <input type="hidden" name="_token" value="UqENTsRm6MwL2iTgIqCIaclWTjmjUFrCURLYpvOD">
+                        <div class="input-group mb-3">
+                        <input type="text" v-model="email" class="form-control form-control-sm" placeholder="Phone or Email"
+                            name="username" required value="">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control form-control-sm" placeholder="Password" name="password" required>
+                        <button type="button" class="toggle btnToggleEye"><i class="fa fa-eye"></i></button>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <small class="float-right">
+                                <a href="#" data-toggle="modal" data-target="#lupa">Lupa Password?</a>
+                            </small>
+                        </div>
+                        <div class="col-12">
+                            <div class="icheck-primary">
+                                <input type="checkbox" id="remember" name="remember_me">
+                                <label for="remember">
+                                    <small>Remember Me</small>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+
+                    
+                    
+                    <div class="social-auth-links text-center mt-2 mb-3">
+                        <button class="btn btn-block btn-primary btn-sm" type="submit">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Sign in
+                        </button>
+                        <a href="http://127.0.0.1:3000/Project Web Hajatans/html/register.html" class="btn btn-block btn-danger btn-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i> Register
+                        </a>
+                    </div>
+
+                </form>
+                <!-- /.social-auth-links -->
+
+                <center>
+                    <!-- <p class="mb-1">
+        <a href="forgot-password.html">I forgot my password</a>
+        </p> -->
+                </center>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+        <!-- Modal -->
+        <div class="modal fade" id="lupa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Lupa Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group mb-3 mt-3">
+                            <input type="email" v-model="email2" class="form-control" placeholder="Enter Email"
+                                :value="email">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <i v-if="loading==true" class="fas fa-spinner fa-pulse"></i>
+                        <button type="button" @click="sendEmail" class="btn btn-warning btn-sm"
+                            :class="loading? 'disabled' : ''" style="color: white">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Verification
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.login-box -->
+
+
+    <!-- jQuery -->
+    <script src="https://hajatans.com/admin-theme/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="https://hajatans.com/admin-theme/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="https://hajatans.com/admin-theme/dist/js/adminlte.min.js"></script>
+    <!-- Toastr -->
+    <script src="https://hajatans.com/admin-theme/plugins/toastr/toastr.min.js"></script>
+    <script src="https://hajatans.com/admin-theme/dist/js/axios.min.js"></script>
+    <script src="https://hajatans.com/admin-theme/dist/js/vue.min.js"></script>
+    <script type="text/javascript">
+        //   VanillaTilt.init(document.querySelectorAll(".btn"),{scale:1.05,grale:true,max:1});
+console.log("286");
+
+var vue = new Vue({
+el: '#app',
+data: {
+    email: '',
+    email2:'',
+    loading: false,
+},
+mounted() {
+},
+methods: {
+    sendEmail(){
+        if(this.email2!=''){
+            this.loading = true;
+            // SlickLoader.enable();
+            let formData = new FormData();
+            formData.append('email', this.email2);
+            axios.post('/forgot_password', formData)
+                .then(r => {
+                    console.log(r.data);
+                    this.loading = false;
+                    toastr.success('Sukses! '+r.data);
+                }).catch(r => {
+                    console.log(r.data);
+                    this.loading = false;
+                    toastr.error('Gagal! Email tersebut tidak terdaftar.');
+                });
+        }
+        else{
+            toastr.error('Email tidak boleh kosong');
+        }
+    }
+
+}
+});
+    </script>
+    <script>
+        $(document).ready(function(){
+            function togglePassword(passwordInput, iconInput) {
+                if (passwordInput.attr('type') === 'password') {
+                    passwordInput.attr('type','text')
+                    iconInput.addClass("fa-eye-slash");
+                    //toggle.innerHTML = 'hide';
+                } else {
+                    passwordInput.attr('type','password')
+                    iconInput.removeClass("fa-eye-slash");
+                    //toggle.innerHTML = 'show';
+                }
+            }
+            $('.btnToggleEye').click(function () {
+                let passwordInput = $(this).parent('.input-group').find('input');
+                let iconInput = $(this).find('i');
+                togglePassword(passwordInput, iconInput);
+                // console.log(iconInput);
+                // console.log("passs "+$(this).parent('.input-group').html());
+            })
+        })
+    </script>
+    
+</body>
+
+</html>
